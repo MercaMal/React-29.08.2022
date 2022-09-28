@@ -1,0 +1,31 @@
+.text{
+margin-top: 25px;
+text-align: center;
+font-size: 15px;
+font-weight: bolder;
+}
+
+.nupp{
+color: bisque;
+background-color: blue;
+font-size: x-large;
+cursor: pointer;
+height: 60px;
+padding: 20px 10px;
+border-radius: 8px;
+margin-bottom: 25px;
+}
+
+.avaleht-text{
+margin-top: 50px;
+text-align: center;
+font-size: 25px;
+font-weight: bold;
+}
+
+.vaata-arvuteid{
+margin-top: 100px;
+font-size: 25px;
+font-weight: bold;
+color: rgb(31, 31, 39);
+}

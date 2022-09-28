@@ -1,0 +1,50 @@
+.main-picture{
+display: flex;
+height: 500px;
+width: auto;
+margin-left: 30%;
+border-radius: 150px;
+box-shadow: 0 8px 100px 0px;
+
+}
+
+.navigation-pictures{
+  display: flex; 
+  justify-content: space-evenly;
+  margin-top: 50px;
+  
+  
+}
+.navigation-pictures img{
+  border-radius: 75px;
+  height: 300px;
+  width: 250px;
+  cursor: pointer;
+  
+}
+.navigation-pictures img:hover{
+  scale: 1.5;
+  transition: 0.5s;
+  box-shadow: 0 8px 100px 0px;
+}
+.twitter-button img {
+  height: 30px;
+  padding: 20px 10px;
+  
+}
+.twitter-button span{
+  position: relative;
+  top: -30px;
+  height: 30px;
+  color: blueviolet;
+  
+}
+.twitter-button:hover{
+  /* hover ei toimi */
+color:rgb(71, 31, 145);
+cursor:pointer;
+}
+.youtube{
+  padding-left: 15px ;
+
+}

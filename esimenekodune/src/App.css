@@ -1,0 +1,32 @@
+.nupp{
+  background-color: darkgreen;
+  color: gray;
+}
+.nupp:hover{
+  height:100px;
+}
+
+.nupp:active{
+  cursor: grab;
+}
+.tekst{
+  color: blue;
+  font-style: italic;
+  
+}
+.tekst:hover{
+  font-size: 24px;
+}
+.pilt{
+  height: 200px;
+  float: right;
+  display: flex;
+}
+.body{
+  background-color: beige;
+}
+.App{
+  text-align: center;
+}
+
+
