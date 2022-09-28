@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+
 function Avaleht () {
 // vasak pool läheb HTMLi (teha muutuv koht)
     // paremal pool on funktsionaalsus, mille abil saan vasakut poolt muuta

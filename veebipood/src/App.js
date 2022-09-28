@@ -7,6 +7,7 @@ import Meist from './pages/Meist';
 import Ostukorv from './pages/Ostukorv';
 import Poed from './pages/Poed';
 import Seaded from './pages/Seaded';
+import MuudaToode from "./pages/MuudaToode"
 
 
 
@@ -49,6 +50,7 @@ function App() {
        <Route path="seaded"element={ <Seaded />} />
        <Route path="poed"element={ <Poed />} />
        <Route path="halda"element={ <HaldaTooteid />} />
+       <Route path="muuda/:index" element={ <MuudaToode />} />
        
       
 
