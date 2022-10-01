@@ -9,6 +9,8 @@ function Avaleht () {
               // pärast refreshi või lehelt (URL-lt) ära minnes ja tagasi tulles
 
 // apiKey: "AIzaSyAj8149KX35XxpBt4M1DF1xvH8iUURDEAE",
+//const -constant variable ehk konstantne muutuja
+// let local variable in entire function. var on globaalne, seda ei kasutata
 
     const[kogus, uuendaKogus] = useState(6);
     const tooted =JSON.parse (localStorage.getItem("tooted")) || [];
@@ -19,7 +21,7 @@ function Avaleht () {
             uuendaKogus(0);  
         }  
         // kui sulgude sisene on tõsi, siis tee seda
-        // loogelistega ma ktekitan mingi ploki (funktsiooni käimapanemine ja ifi plokk)
+        // loogelistega ma tekitan mingi ploki (funktsiooni käimapanemine ja ifi plokk)
       const v2henda = () => {
         if (kogus > 0) {
             uuendaKogus (kogus-1);
