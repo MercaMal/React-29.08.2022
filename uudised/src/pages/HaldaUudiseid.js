@@ -10,9 +10,9 @@ function HaldaUudiseid() {
 
     return ( 
     <div>
-        {uudised.map((uudised,index)=>
-        <div key={uudised}>
-        <div>{uudised} <span />
+        {uudised.map((element,index)=>
+        <div key={element}>
+        <div>{element} <span />
         <button onClick={()=>kustuta(index)}>x</button>
         </div> 
         
