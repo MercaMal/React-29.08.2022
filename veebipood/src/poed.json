@@ -1,1 +1,21 @@
-["Mustamäe", "Õismäe", "Kristiine", "Lasnamäe", "Põhja-Tallinn", "Kesklinn", "Kakumäe"]
+
+[
+    {
+        "nimetus": "Kristiine",
+        "aeg": "9-22",
+        "aadress": "Tulika 7b",
+        "kommentaarid": ""
+    },
+    {
+        "nimetus": "Mustamäe",
+        "aeg": "10-22",
+        "aadress": "Tammsaare tee 2",
+        "kommentaarid": "L P suletud"
+    },
+    {
+        "nimetus": "Balti jaam",
+        "aeg": "11-22",
+        "aadress": "Niine 12",
+        "kommentaarid": ""
+    }
+]

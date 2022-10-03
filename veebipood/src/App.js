@@ -8,6 +8,7 @@ import Ostukorv from './pages/Ostukorv';
 import Poed from './pages/Poed';
 import Seaded from './pages/Seaded';
 import MuudaToode from "./pages/MuudaToode"
+import YksikToode from './pages/YksikToode';
 
 
 
@@ -51,6 +52,9 @@ function App() {
        <Route path="poed"element={ <Poed />} />
        <Route path="halda"element={ <HaldaTooteid />} />
        <Route path="muuda/:index" element={ <MuudaToode />} />
+       <Route path="toode/:j2rjekorraNumber" element={ <YksikToode />} />
+       <Route path="*" element={ <div>Lehekülge ei leitud</div>} />
+       
        
       
 

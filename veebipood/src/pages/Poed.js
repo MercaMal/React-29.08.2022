@@ -6,8 +6,15 @@ import poedFailist from "../poed.json";
 function Poed() {
 const [poed, uuendaPoed] = useState (poedFailist);
 const poodRef= useRef ()
+
 const indexRef = useRef();
 const uusRef = useRef();
+
+const aegRef = useRef ();
+const aadressRef = useRef ();
+const kommentaaridRef = useRef ();
+
+
 
 const sorteeri =()=> {
     poed.sort();
@@ -19,8 +26,16 @@ const kustuta = (j2rjekorranumber)=> {
     uuendaPoed(poed.slice());
 }
 const lisaPood =()=>{
-    poed.push(poodRef.current.value);
+   const uusPood= {
+    "nimetus": poodRef.current.value, //vajutamise hetkeväärtus inputi seest
+    "aeg": aegRef.current.value,
+    "aadress": aadressRef.current.value,
+    "kommentaarid": kommentaaridRef.current.value,
+   }
+    poed.push(uusPood);
     uuendaPoed(poed.slice());
+
+
 }
 const tyhjenda = () => {
     uuendaPoed([]);
@@ -54,12 +69,19 @@ return (
 
       <label>Uus pood</label> <br />
       <input ref={poodRef} type="text" /> <br />
+      <label> Lahtiolekuaeg</label> <br />
+      <input ref={aegRef} type="text" /> <br />
+      <label>Aadress</label> <br />
+      <input ref={aadressRef} type="text" /> <br />
+      <label>Kommentaarid</label> <br />
+      <input ref={kommentaaridRef} type="text" /> <br />
       <button onClick={lisaPood}>Lisa uus pood</button> <br />
-      <div>Sinu valitud pood: {valitudPood}</div>
+      <div>Sinu valitud pood: {valitudPood.nimetus}</div>
       <div>Poode on {poed.length} tk</div>
 
       {poed.map((pood,index) => 
-        <div key={pood}>{pood} 
+        <div key={index}>
+          {pood.nimetus} {pood.aeg}
         {/* kuidas saab efektiivselt kustutada, muuta. 
         ja kui on kaks samasugust, siis läheb errorisse */}
           <button onClick={() => kustuta(index)}>x</button>

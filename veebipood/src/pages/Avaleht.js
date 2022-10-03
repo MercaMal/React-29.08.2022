@@ -1,4 +1,6 @@
 import { useState } from "react";
+import {Link} from "react-router-dom"
+
 
 
 function Avaleht () {
@@ -49,23 +51,18 @@ function Avaleht () {
         <button onClick={v2henda}>-</button>
         <span>{kogus}</span> 
         <button onClick={suurenda}>+</button>
-
-        {tooted.map(element=> 
+        {tooted.map((element, index)=> 
         <div key={element}>
-           <div>{element}</div>
-            <button onClick={()=>lisaOstukorvi(element)}>Lisa ostukorvi</button>
-
+        <Link to = {"/toode/" + index}>
+        <div>{element.nimi}</div>
+        </Link>
+        <button onClick={()=>lisaOstukorvi(element)}>Lisa ostukorvi</button>
+          
             </div> )}
+      </div> )
+}
 
 
-
-         </div> )}
-
-
-    
-
-    
-    
 export default Avaleht ;
 
 // ref -inputi sees olemine
