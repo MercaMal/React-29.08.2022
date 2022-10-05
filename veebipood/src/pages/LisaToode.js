@@ -15,20 +15,16 @@ function LisaToode() {
        }else {uuendaS6num("Toode lisatud");
 
       let tootedLS= localStorage.getItem("tooted");
-      console.log(tootedLS)
       tootedLS=JSON.parse(tootedLS) || [];
       const uusToode = {
         "nimi": nimiRef.current.value,
-        "hind": hindRef.current.value,
+        "hind": Number(hindRef.current.value),
         "pilt": piltRef.current.value
       }
-      console.log(tootedLS)
       tootedLS.push(uusToode);
-      console.log(tootedLS)
       tootedLS=JSON.stringify(tootedLS);
-      console.log(tootedLS)
       localStorage.setItem("tooted", tootedLS);
-      console.log(tootedLS)
+      
     }
     
     }
@@ -38,7 +34,7 @@ function LisaToode() {
           <label>Uue toote nimi</label> <br />
           <input ref={nimiRef} type="text" /> <br />
           <label>Hind </label> <br />
-          <input ref={hindRef} type="text" /> <br />
+          <input ref={hindRef} type="number" /> <br />
           <label>Pilt</label> <br />
           <input ref={piltRef} type="text" /> <br />
           

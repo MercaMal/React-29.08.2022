@@ -15,7 +15,7 @@ function HaldaUudiseid() {
         <div key={element}>
         <div>{element} <span />
         <button onClick={()=>kustuta(index)}>Kustuta</button>
-        <Link to ={"/muuda/ + index"}><button>Muuda</button>
+        <Link to ={"/muuda/" + index}><button>Muuda</button>
         </Link>
         </div> 
        
