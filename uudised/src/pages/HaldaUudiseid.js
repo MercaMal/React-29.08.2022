@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {Link} from "react-router-dom";
 function HaldaUudiseid() {
     const [uudised, muudaUudised] = useState (JSON.parse(localStorage.getItem("uudised")) || []);
     const kustuta = (j2rjekorraNumber) => {
@@ -13,9 +14,11 @@ function HaldaUudiseid() {
         {uudised.map((element,index)=>
         <div key={element}>
         <div>{element} <span />
-        <button onClick={()=>kustuta(index)}>x</button>
+        <button onClick={()=>kustuta(index)}>Kustuta</button>
+        <Link to ={"/muuda/ + index"}><button>Muuda</button>
+        </Link>
         </div> 
-        
+       
         
       
     </div>) } 
