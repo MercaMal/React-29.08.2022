@@ -1,4 +1,6 @@
-
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 import {Link, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Avaleht from "./pages/Avaleht" ;
@@ -9,32 +11,21 @@ import LisaUudis from './pages/LisaUudis';
 import HaldaUudiseid from './pages/HaldaUudiseid';
 import YksUudis from './pages/YksUudis';
 import MuudaUudis from './pages/MuudaUudis';
-
-
-
 function App() {
   return (
-    <div className="App">
-    <div className='navigation-buttons'>
+   <div> 
+    <div>  
+    <Navbar bg="primary" variant="dark">
+        <Container>
+          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#features">Features</Nav.Link>
+            <Nav.Link href="#pricing">Pricing</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
 
-      <Link to="/">
-        <button className="nupp">Avalehele</button>
-      </Link>
-      <Link to="uudised">
-        <button className='nupp'>Uudiste lehele</button>
-      </Link>
-      <Link to="kontakt">
-        <button className='nupp'>Võta meiega ühendust</button>
-      </Link>
-      <Link to="meist">
-        <button className='nupp'>Info meist</button>
-      </Link>
-      <Link to="LisaUudis">
-        <button className='nupp'>Lisa Uudis</button>
-      </Link>
-      <Link to="halda">
-        <button className='nupp'>Halda Uudiseid</button>
-      </Link>
       </div>
       
 
