@@ -28,3 +28,5 @@ function MuudaUudis() {
 }
 
 export default MuudaUudis;
+// i-internationalization-rahbusvahelistumine
+// 18 tähte n

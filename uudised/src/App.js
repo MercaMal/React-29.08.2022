@@ -11,18 +11,30 @@ import LisaUudis from './pages/LisaUudis';
 import HaldaUudiseid from './pages/HaldaUudiseid';
 import YksUudis from './pages/YksUudis';
 import MuudaUudis from './pages/MuudaUudis';
+import { useTranslation } from 'react-i18next';
 function App() {
+   const { t, i18n } = useTranslation();
+
+   const changeLang = (newLang) => {
+    i18n.changeLanguage(newLang);
+
+   }
   return (
    <div> 
     <div>  
     <Navbar bg="primary" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">Avaleht</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link as={Link} to="uudised">{t('nav.uudised')}</Nav.Link>
+            <Nav.Link as={Link} to="meist">{t('nav.meist')}</Nav.Link>
+            <Nav.Link as={Link} to="kontakt">{t('nav.kontakt')}</Nav.Link>
+            <Nav.Link as={Link} to="LisaUudis">{t('nav.lisa uudis')}</Nav.Link>
           </Nav>
+          <img className='lang' onClick={()=>changeLang ("ee")} src= {require("./images/estonian.png")} alt="" />
+          <img className='lang' onClick={()=>changeLang ("en")} src= {require("./images/english.png")} alt="" />
+          <img className='lang' onClick={()=>changeLang ("ru")} src= {require("./images/russian.png")} alt="" />
+
         </Container>
       </Navbar>
 

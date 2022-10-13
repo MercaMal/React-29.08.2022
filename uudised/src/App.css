@@ -4,27 +4,16 @@
   margin-top: 1%;
   margin-left: 30%;
   border-radius: 70px;
+}
+
+
+.lang{
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 
 }
-.nupp{
-  height: 50px;
-}
-.nupp:hover{
-height: 75px
-
-}
-.nupp{
-  color: rgb(160, 9, 9);
-}
-.nupp{
-  background-color: rgb(202, 202, 235);
-}
-.nupp{
-font: bold;
-}
-.nupp{
-  scale: 1.0;
-  transition: 0.3s;
-  box-shadow: 0 8px 100px 10px;
+.lang:hover{
+  opacity: 0.6;
 }
   
