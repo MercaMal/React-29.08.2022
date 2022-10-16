@@ -2,8 +2,8 @@ import { useState } from "react";
 
 
 function Avaleht() { 
-    
-    const [tegelased] = useState ([
+   
+    const [tegelased, uuendaTegelased] = useState (JSON.parse (localStorage.getItem("tegelased")) || [
     {
         "eesnimi": "Mickey",
         "perenimi": "Mouse",

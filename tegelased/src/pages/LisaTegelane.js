@@ -1,35 +1,40 @@
 import {useRef, useState} from "react"
 function LisaTegelane() {
     const [sonum, uuendaSonum] = useState ("");
-    const tegelane = JSON.parse (localStorage.getItem("tegelased"))|| []
+    
 
-    const nimiRef = useRef ();
+    const eesnimiRef = useRef ();
+    const perenimiRef = useRef ();
     const vanusRef = useRef ();
     const elukohtRef = useRef ();
 
 
     const lisa = () => {
-     if (nimiRef.current.value === "") {uuendaSonum ("Tühja nimega ei saa sisestada");
-    } else {uuendaSonum ("Tegelane lisatud");
+     if (eesnimiRef.current.value === "") {uuendaSonum ("Tühja nimega ei saa sisestada"); <br/>
+    } else {uuendaSonum ("Tegelane lisatud"); 
 
-
-    console.log(nimiRef.current.value)
-    console.log(vanusRef.current.value)
-    console.log(elukohtRef.current.value)
-    
+ let tegelasedLS =localStorage.getItem("tegelane");
+ tegelasedLS=JSON.parse(tegelasedLS) || [];
+ 
     const uusTegelane = {
-    "nimi": nimiRef.current.value,
+    "eesnimi": eesnimiRef.current.value,
+    "perenimi": perenimiRef.current.value,
     "vanus": vanusRef.current.value,
     "elukoht": elukohtRef.current.value
       }
+      tegelasedLS.push(uusTegelane);
+      tegelasedLS=JSON.stringify(tegelasedLS);
+      localStorage.setItem("tegelased", tegelasedLS);
       
 }
    
     }
     return ( <div>
         {sonum}
-        <label>Tegelase nimi</label> <br />
-        <input ref= {nimiRef} type= "text" /> <br />
+        <label>Tegelase eesnimi</label> <br />
+        <input ref= {eesnimiRef} type= "text" /> <br />
+        <label>Tegelase perenimi</label> <br />
+        <input ref= {perenimiRef} type= "text" /> <br />
         <label>Tegelase vanus</label> <br />
         <input ref= {vanusRef} type ="text" /> <br />
         <label>Tegelase elukoht</label> <br />
