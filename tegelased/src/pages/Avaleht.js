@@ -3,7 +3,7 @@ import { useState } from "react";
 
 function Avaleht() { 
     
-    const [tegelased, uuendaTegelased] = useState ([
+    const [tegelased] = useState ([
     {
         "eesnimi": "Mickey",
         "perenimi": "Mouse",
@@ -36,28 +36,27 @@ function Avaleht() {
     }
     ])
     
-    const [valitudTegelane, uuendaValitudTegelane] = useState ("");
+    const [klikitudNimi, uuendaKlikitudNimi] = useState ("");
+    
     const kuvaNimi = (tegelane) => {
-        console.log (tegelane);  
-        uuendaValitudTegelane(tegelane);
+        //console.log (tegelane.eesnimi);  
+        uuendaKlikitudNimi(tegelane.eesnimi);
        
        }
        const valiTegelane = (klikitudTegelane)=>{
-        let tegelaneLS=localStorage.getItem ("valitudTegelased");
-        tegelaneLS=JSON.parse(tegelaneLS) || [];
-        tegelaneLS.push(klikitudTegelane)
-        tegelaneLS = JSON.stringify(tegelaneLS);
-        localStorage.setItem("valitudTegelane", tegelaneLS);
-}
+        let valitudLS=localStorage.getItem ("valitudTegelased");
+        valitudLS=JSON.parse(valitudLS) || [];
+        valitudLS.push(klikitudTegelane)
+        valitudLS = JSON.stringify(valitudLS);
+        localStorage.setItem("valitudTegelased", valitudLS);
+        }
        
       
-
-    
     return ( 
     // Nüüd võimalda näidata iga klikitud tegelase eesnime kliki abil HTML-s kirjega:
 // „Klikkisid tegelase X peal“. Selleks kasuta useState funktsionaalsust, et panna X muutuma.
     <div>
-       <div>Klikkisid tegelase: {valitudTegelane} peal</div> <br /> 
+       { klikitudNimi !== "" && <div>Klikkisid tegelase: {klikitudNimi} peal</div> } <br />
         {tegelased.map(tegelane=>
 
          <div>
@@ -66,8 +65,8 @@ function Avaleht() {
            <div>{tegelane.vanus}</div> 
            <div>{tegelane.elukoht}</div> 
 
-           <button onClick={()=>kuvaNimi(tegelane.eesnimi)}>Vaata</button> <br/> 
-           <button onClick={()=>valiTegelane(tegelane.eesnimi)}>Vali</button>
+           <button onClick={()=>kuvaNimi(tegelane)}>Kuva nimi</button> <br/> 
+           <button onClick={()=>valiTegelane(tegelane)}>Vali</button>
         </div> )}
         
    

@@ -7,6 +7,8 @@ const [andjad, uuendaAndjad] = useState (andjateFail);
 const [paul, uuendaPaul] = useState ();
 const [firstD, uuendaFirstD] = useState ();
 
+ 
+
 // filtreeriM
 const filtreeriM=()=>{
   const vastus=andjad.filter(andjad=>andjad.startsWith ("M"));  
@@ -74,6 +76,7 @@ return (
         <button onClick={findPaulIndex}>Mis on Pauli järjekorranumber</button>
         <button onClick={leiaEsimeneDTahega}>Esimene D tähega</button>
        
+        
 {andjad.map(element=> <div>{element}</div>)}
       
 

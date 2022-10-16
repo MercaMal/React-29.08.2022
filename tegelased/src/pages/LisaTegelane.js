@@ -1,7 +1,7 @@
 import {useRef, useState} from "react"
 function LisaTegelane() {
     const [sonum, uuendaSonum] = useState ("");
-    const tegelased = JSON.parse (localStorage.getItem("tegelased"))|| []
+    const tegelane = JSON.parse (localStorage.getItem("tegelased"))|| []
 
     const nimiRef = useRef ();
     const vanusRef = useRef ();
@@ -12,11 +12,6 @@ function LisaTegelane() {
      if (nimiRef.current.value === "") {uuendaSonum ("Tühja nimega ei saa sisestada");
     } else {uuendaSonum ("Tegelane lisatud");
 
-    let valitudTegelaneLS = localStorage.getItem ("valitudTegelane");
-    valitudTegelaneLS = JSON.parse(valitudTegelaneLS) || []
-    valitudTegelaneLS.push
-    
-    localStorage.setItem("tegelane", tegelaneLS);
 
     console.log(nimiRef.current.value)
     console.log(vanusRef.current.value)
