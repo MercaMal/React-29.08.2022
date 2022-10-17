@@ -1,0 +1,41 @@
+.product {
+display: flex; /*vasakult paremale*/
+justify-content: space-between ;/*ruumijaotud vahele*/
+margin: 0 10%; /*ülevale alla 0, vasakult paremale 10% lehest*/
+border-bottom:1px solid lightgray; /*piirjoon-
+       paksus,liik  värvus*/
+padding:10px 0; 
+/* saab panna 
+px,
+ % ---- parent elemendist
+ vh --- minu ekraani kõrgusest protsent  
+ vw --- minu ekraani laiusest protsent /
+/*padding tõukab sissepoole asju
+0-üles alla, vasak parem 10
+margin: 10%--- igas suunas10%tõukan */
+}
+
+.name{
+width: 100px;
+}
+
+.price {
+width: 50px;
+}
+
+.image {
+    width: 100px
+}
+
+.quantity {
+width: 50px
+}
+
+.sum {
+    width: 50px
+
+}
+ .button {
+
+
+ }
