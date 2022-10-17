@@ -11,8 +11,8 @@ const [cart, setCart] = useState (JSON.parse(localStorage.getItem("cart")) || []
 }
 const calculateCartSum = ()=>{
     let cartSum = 0;
-    cartSum.forEach(element => cartSum + element.product.price*element.quantity);
-    return cartSum
+    cart.forEach(element => cartSum =cartSum + element.product.price*element.quantity);
+    return cartSum.toFixed(2);
 }
 const decreaseQuantity = (productIndex) => {
      cart[productIndex].quantity = cart[productIndex].quantity - 1;
@@ -30,15 +30,15 @@ return (
         <img src={element.product.image} alt=""/>
         <div className={styles.name}>{element.product.name}</div>
         <div className={styles.price}>{element.product.price} £ </div>
-        <button onClick={()=>decreaseQuantity(index)}>+</button>
+        <button onClick={()=>decreaseQuantity(index)}>-</button>
         <div className={styles.quantity}>{element.quantity} tk</div>
-        <button onClick={()=>increaseQuantity(index)}>-</button>
-        <div className={styles.sum}>{(element.product.price*element.quantity).toFixed(2)} £ </div>
+        <button onClick={()=>increaseQuantity(index)}>+</button>
+        <div className={styles.sum}>{ (element.product.price*element.quantity).toFixed(2)} £ </div>
 
         <Button onClick={()=>remove(index)} variant= "danger">Kustuta</Button>
         </div>  
         )}
-    <div> Kokku: {calculateCartSum} £</div>
+    <div> Kokku: {calculateCartSum()} £</div>
     
     </div> );
 }
