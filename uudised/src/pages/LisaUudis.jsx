@@ -3,8 +3,8 @@ import { useRef } from "react";
 function LisaUudis() {
 
 const uudiseRef=useRef ();
-const lisaUusUudis = ()=>{
 
+const lisaUusUudis = ()=>{
 let uudised = localStorage.getItem("uudised"); // let muutuja-et saaks ka hilisemalt väärtust anda
 uudised = JSON.parse(uudised)|| []; //jutumärgid maas
 uudised.push(uudiseRef.current.value);

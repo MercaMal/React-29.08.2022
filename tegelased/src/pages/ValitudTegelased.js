@@ -20,7 +20,7 @@ function ValitudTegelased() {
     
     <div>
      {valitudTegelased.length > 0 && <div>Valitud on {valitudTegelased.length} tegelast</div> }  
-    {valitudTegelased.lengtt> 0 && <button onClick ={kustuta}>Kustuta kõik</button>}
+    {valitudTegelased.length> 0 && <button onClick ={kustuta}>Kustuta kõik</button>}
      {valitudTegelased.map((tegelane,index) =>
       <div>
       <div>{tegelane.eesnimi}</div>  

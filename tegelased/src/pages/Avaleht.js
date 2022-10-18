@@ -3,7 +3,7 @@ import { useState } from "react";
 
 function Avaleht() { 
    
-    const [tegelased, uuendaTegelased] = useState (JSON.parse (localStorage.getItem("tegelased")) || [
+    const [tegelased] = useState (JSON.parse (localStorage.getItem("tegelased")) || [
     {
         "eesnimi": "Mickey",
         "perenimi": "Mouse",
@@ -56,7 +56,7 @@ function Avaleht() {
     // Nüüd võimalda näidata iga klikitud tegelase eesnime kliki abil HTML-s kirjega:
 // „Klikkisid tegelase X peal“. Selleks kasuta useState funktsionaalsust, et panna X muutuma.
     <div>
-       { klikitudNimi !== "" && <div>Klikkisid tegelase: {klikitudNimi} peal</div> } <br />
+        {klikitudNimi !== "" && <div>Klikkisid tegelase: {klikitudNimi} peal</div> } <br />
         {tegelased.map(tegelane=>
 
          <div>

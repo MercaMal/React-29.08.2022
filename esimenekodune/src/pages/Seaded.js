@@ -32,7 +32,7 @@ return (
     <button onClick={() => muudaKujundus("light_mode")}>LightMode</button>
     <button onClick={() => muudaKujundus("colored_mode")}>CloredMode</button>
 {/* läheb lõputult muutuma */}
-    {/* loogeliste sees on dünaamika, mida teeb javas
+    {/* loogeliste sees on dünaamika, mida teeb javaS
     // && kas näitan paremat poolt või mitte, 
     vastavalt kas sellest vasak pool on tõene*/}
 
