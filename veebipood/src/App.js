@@ -9,6 +9,7 @@ import Seaded from './pages/Seaded';
 import MuudaToode from "./pages/MuudaToode"
 import YksikToode from './pages/YksikToode';
 import Koduleht from './pages/Koduleht';
+import Tooted from './pages/Tooted';
 
 
 
@@ -40,7 +41,10 @@ function App() {
      <Link to="halda">
       <button className='menyynupp'>Halda Tooteid</button>
      </Link>
-
+     <Link to="tooted">
+      <button className='menyynupp'>Tooted</button>
+     </Link>
+     
       
 
       <Routes>
@@ -54,6 +58,7 @@ function App() {
        <Route path="muuda/:index" element={ <MuudaToode />} />
        <Route path="toode/:j2rjekorraNumber" element={ <YksikToode />} />
        <Route path="*" element={ <div>Lehekülge ei leitud</div>} />
+       <Route path="tooted"element={ <Tooted />} />
        
        
       
