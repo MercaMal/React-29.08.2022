@@ -1,29 +1,14 @@
 import { useState } from "react";
-import {Link} from "react-router-dom"
-
-
+import {Link} from "react-router-dom";
 
 function Avaleht () {
-// vasak pool läheb HTMLi (teha muutuv koht)
-    // paremal pool on funktsionaalsus, mille abil saan vasakut poolt muuta
-         // kui toimub muutmine, siis antakse läbi parema poole sulgude uus väärtus
-            // useState sulgude sees on esmane väärtus lehele tulles
-              // pärast refreshi või lehelt (URL-lt) ära minnes ja tagasi tulles
-
-// apiKey: "AIzaSyAj8149KX35XxpBt4M1DF1xvH8iUURDEAE",
-//const -constant variable ehk konstantne muutuja
-// let local variable in entire function. var on globaalne, seda ei kasutata
 
     const[kogus, uuendaKogus] = useState(6);
-    const tooted =JSON.parse (localStorage.getItem("tooted")) || [];
+    const tooted = JSON.parse (localStorage.getItem("tooted")) || [];
   
     const nulli = () => { 
-        // tegemist on funktsiooniga, mida saab lõputult käivitada
-         // käivitub loogeliste sulgude vahel olev
             uuendaKogus(0);  
         }  
-        // kui sulgude sisene on tõsi, siis tee seda
-        // loogelistega ma tekitan mingi ploki (funktsiooni käimapanemine ja ifi plokk)
       const v2henda = () => {
         if (kogus > 0) {
             uuendaKogus (kogus-1);
@@ -65,6 +50,12 @@ function Avaleht () {
 
 export default Avaleht ;
 
+// // kui sulgude sisene on tõsi, siis tee seda
+        // loogelistega ma tekitan mingi ploki (funktsiooni käimapanemine ja ifi plokk)
+
+// // tegemist on funktsiooniga, mida saab lõputult käivitada
+         // käivitub loogeliste sulgude vahel olev
+
 // ref -inputi sees olemine
 //use state komponendile restardi tegemine
 // kui const on ees, sisse sellele ei anna rohkem võrdusmärgiga väärtust. 
@@ -93,4 +84,14 @@ export default Avaleht ;
 === st et vasak ja parem pool võrdub omavahel
 1 = ga antakse väärtusi
 == seda ei olegi olemas */
+
+// // vasak pool läheb HTMLi (teha muutuv koht)
+    // paremal pool on funktsionaalsus, mille abil saan vasakut poolt muuta
+         // kui toimub muutmine, siis antakse läbi parema poole sulgude uus väärtus
+            // useState sulgude sees on esmane väärtus lehele tulles
+              // pärast refreshi või lehelt (URL-lt) ära minnes ja tagasi tulles
+
+// apiKey: "AIzaSyAj8149KX35XxpBt4M1DF1xvH8iUURDEAE",
+//const -constant variable ehk konstantne muutuja
+// let local variable in entire function. var on globaalne, seda ei kasutata
    

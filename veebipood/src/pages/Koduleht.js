@@ -1,7 +1,4 @@
-
-import {Link} from "react-router-dom"
-
-
+import {Link} from "react-router-dom";
 
 
 function Koduleht () {
@@ -26,7 +23,6 @@ function Koduleht () {
         <div>{element.nimi}</div>
         <div>{element.hind} £ </div>
 
-        
         </Link>
         <button onClick={()=>lisaOstukorvi(element)}>Lisa ostukorvi</button>
           
