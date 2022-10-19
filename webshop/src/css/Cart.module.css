@@ -1,6 +1,6 @@
 .product {
 display: flex; /*vasakult paremale*/
-justify-content: space-between ;/*ruumijaotud vahele*/
+justify-content: space-between ;/*ruumijaotus vahele*/
 margin: 0 10%; /*ülevale alla 0, vasakult paremale 10% lehest*/
 border-bottom:1px solid lightgray; /*piirjoon-
        paksus,liik  värvus*/
@@ -28,14 +28,33 @@ width: 50px;
 }
 
 .quantity {
-width: 50px
+display: flex;
+justify-content: space-between;
+width: 120px;
+height: 35px;
+padding: 1.4px;
+border-radius: 15px;
+border: 1px solid lightgray
 }
 
 .sum {
-    width: 50px
+    width: 80px
+}
+
+.button{
+    width: 30px;
+    height: 30px;
+}
+.button:hover { /*hiirega üleminek*/
+    opacity: 0.7;
+    cursor:pointer;
+}
+/* .button:active{
+    opacity: 0.7;
+    cursor:pointer */
+
+.cart__bottom{
+text-align: right;
+margin-right: 10%;
 
 }
- .button {
-
-
- }
