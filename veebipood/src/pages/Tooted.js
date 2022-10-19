@@ -11,6 +11,12 @@ function Tooted () {
   const [activePage, setActivePage]= useState(2);
   let pages = [1,2,3,4,5];
 
+
+  const changeActivePage = (pageClicked) => {
+    setActivePage(pageClicked);
+    uuendaTooted(tooted.slice(pageClicked))
+  }
+  
   const sortAZ = ()=> {
     tooted.sort((a,b)=>a.name.localeCompare(b.name)); //.sort sulud siin enam ei toimi
     uuendaTooted(tooted.slice()); // meil on tegemist objektidega, tavaline sort ei toimi.
@@ -21,12 +27,14 @@ const sortZA = ()=> {
   uuendaTooted(tooted.slice()); // meil on tegemist objektidega, tavaline sort ei toimi.
 
 }
+
+
     return ( 
   
     <div>
       <Pagination>
         {pages.map(number=> 
-        <Pagination.Item key = {number} active ={number === activePage}>
+        <Pagination.Item key = {number} onClick={()=>changeActivePage(number)} active ={number === activePage}>
         {number}
         </Pagination.Item>)}
       </Pagination>
