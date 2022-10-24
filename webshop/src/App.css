@@ -9,3 +9,6 @@ cursor: pointer;
 .lang:hover {
   opacity: 0.7;
 }
+.map{
+  height: 50px
+}

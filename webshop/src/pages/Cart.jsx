@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import { useState } from "react";
 import styles from "../css/Cart.module.css";
+import {Link} from 'react-router-dom';
 
 
 function  Cart () {
@@ -53,24 +54,31 @@ return (
           <img className={styles.button} onClick={()=>increaseQuantity(index)}src={require("../images/plus.png")} alt=""/>
         </div>
         
-        <div className={styles.sum}>{ (element.product.price*element.quantity).toFixed(2)} £ </div>
+        <div className={styles.sum}>{  (element.product.price*element.quantity).toFixed(2)} £ </div>
         <img className={styles.button} onClick={()=>remove(index)}src={require("../images/x.png")} alt=""/>
         </div>  
         )}
-   <div className={styles.cart__bottom}>
-   <div> Kokku: {calculateCartSum()} £</div>
 
-  <select ref={pmRef}>{parcelMachines
-  .filter(element => element.A0_NAME === "EE")
- .map(element=>
- <option key={element.NAME}>{element.NAME}</option>)}
- </select>
+      { cart.length > 0 &&  
+        <div className={styles.cart__bottom}>
+       <div> Kokku: £{calculateCartSum()}</div>
 
- <button onClick={sendOrder}>Vormista tellimus</button>
- 
+       <select ref={pmRef}>{parcelMachines
+      .filter(element => element.A0_NAME === "EE")
+     .map(element=>
+     <option key={element.NAME}>{element.NAME}</option>)}
+    </select>
 
+   <button onClick={sendOrder}>Vormista tellimus</button>
+   </div>}
 
-   </div>
+   { cart.length === 0 &&  
+    <div>
+      <div>Ostukoris pole tooteid.</div>
+      <div>Vajuta <Link to= "tooted">siia</Link>, et jätkata ostlemist.</div>
+      </div> }
+   
+
     </div> );
 }
 
