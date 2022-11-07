@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { useState } from "react";
 import styles from "../css/Cart.module.css";
 import {Link} from 'react-router-dom';
+import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
 
 
 function  Cart () {
@@ -28,6 +29,7 @@ const calculateCartSum = ()=>{
     let cartSum = 0;
     cart.forEach(element => cartSum =cartSum + element.product.price*element.quantity);
     return cartSum.toFixed(2);
+  
 }
 const decreaseQuantity = (productIndex) => {
      cart[productIndex].quantity = cart[productIndex].quantity - 1;
@@ -37,16 +39,35 @@ const increaseQuantity = (productIndex) => {
     cart[productIndex].quantity = cart[productIndex].quantity + 1;
     setCart(cart.slice());
 }
-//  const sendOrder = () => {
-//     console.log(pmRef.current.value);
-//     console.log(cart);
-//   }
-   const pay = () => {
+  const sendOrder = () => {
+  console.log(pmRef.current.value);
+  console.log(cart);
+  const api = new WooCommerceRestApi({
+  url: "https://localhost/wordpress/",
+  consumerKey: "ck_c479a7e5e2f4058f5dd3aacac8ed17091013a3ed",
+  consumerSecret: "cs_c881e311671be8b038fb92a9d08bad9073e470cd",
+  queryStringAuth: true,
+  version: "wc/v3",
+
+  axiosConfig: {
+    headers: {"Content-Type": "application/json"},
+   }
+   });
+   const woocommerceCart = cart.map(element =>  {
+    return {product_id: element.product.id, quantity: element.quantity}
+  });
+  console.log(woocommerceCart)
+  api.post("orders",{"line_items":woocommerceCart})
+  //.then(res=>console.log(res))
+  .then(res => pay(res.data.id))
+  }
+
+   const pay = (orderId) => {
     const data = {
       "api_username": "92ddcfab96e34a5f",
       "account_name": "EUR3D1",
       "amount": calculateCartSum(),
-      "order_reference": Math.random() * 999999,
+      "order_reference": orderId,
       "nonce": "a9b7f7easda2123" + Math.random() * 999999 + new Date(),
       "timestamp": new Date(),
       "customer_url": "https://react-09-22-v.web.app"
@@ -91,7 +112,7 @@ return (
      <option key={element.NAME}>{element.NAME}</option>)}
     </select>
 
-   <button onClick={pay}>Vormista tellimus</button>
+   <button onClick={sendOrder}>Vormista tellimus</button>
    </div>}
 
    { cart.length === 0 &&  

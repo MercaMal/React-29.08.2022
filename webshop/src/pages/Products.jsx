@@ -68,6 +68,7 @@ function Products() {
           consumerKey: "ck_c479a7e5e2f4058f5dd3aacac8ed17091013a3ed",
           consumerSecret: "cs_c881e311671be8b038fb92a9d08bad9073e470cd",
           version: "wc/v3",
+        
           axiosConfig: {
             headers: {}
           }

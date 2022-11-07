@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useState } from 'react';
 import Map from '../components/Map';
+import emailjs from '@emailjs/browser';
 
 function Contact() {
   const [coordinaates, setCoordinates] = useState({lngLat: [59.4378, 24.7574], zoom: 11});
@@ -8,7 +9,20 @@ function Contact() {
  const emailRef = useRef()
  const messageRef = useRef()
 
- const sendEmail = ()=>{}
+ const sendEmail = ()=>{
+  const templateParams = {
+    "to_name":"Webshopi haldajad",
+    "from_name": nameRef.current.value + ",tema e-mail:" + emailRef.current.value,
+    "message": messageRef.current.value
+
+  }
+  emailjs.send('service_vzjl1n5', 'template_ju91m8i', templateParams, '_4MSSe-udzrAxwYaE')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+ }
 
   return (<div>
     <button onClick={() => setCoordinates({lngLat: [59.4378, 24.7574], zoom: 11})}>Kõik poed</button>
